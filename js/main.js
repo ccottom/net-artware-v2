@@ -1,4 +1,4 @@
-/* global createCanvas, resizeCanvas, loadImage */
+/* global createCanvas, resizeCanvas */
 let fruit = [];
 let idx = 0;
 
@@ -10,17 +10,20 @@ function preload () {
 }
 
 function setup () {
-  createCanvas(window.innerWidth, window.innerHeight)
+  window.canvas = createCanvas(window.innerWidth, window.innerHeight)
 }
 
 function draw () {
-  const selected = window.settings.selectedBrush
-  if (selected) {
-    const brush = window.brushes[selected]
-    brush.draw()
+  const currentInput = window.settings.selectedInput
+  const inputObj = window.inputs[currentInput]
+  inputObj.update()
+  if (inputObj.condition() && !window.dragging) {
+    const currentBrush = window.settings.selectedBrush
+    const brushObj = window.brushes[currentBrush]
+    brushObj.draw()
   }
 }
 
 function windowResized () {
-  resizeCanvas(window.innerWidth, window.innerHeight)
+  resizeCanvas(window.innerWidth, window.innerHeight);
 }
