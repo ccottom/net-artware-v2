@@ -1,10 +1,9 @@
-/* global createCanvas, resizeCanvas */
+/* global createCanvas, resizeCanvas, loadImage */
 let fruit = [];
-let idx;
+let idx = 0;
 
 function preload () {
   window.setupMenuLogic()
-  fruit = loadImage('/images/fruit.png');
   for (let i = 0; i < 5; i++) {
     fruit[i] = loadImage("fruit" + i + ".png");
   }
@@ -23,5 +22,5 @@ function draw () {
 }
 
 function windowResized () {
-  resizeCanvas(window.innerWidth, window.innerHeight);
+  resizeCanvas(window.innerWidth, window.innerHeight)
 }
