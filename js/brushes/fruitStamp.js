@@ -1,9 +1,14 @@
 /* global mouseIsPressed, image, mouseX, mouseY */
 window.brushes.fruitStamp = {
   name: 'fruit stamp',
-  draw:   draw: function () {
+  draw: function () {
       if (mouseIsPressed){
-      image(fruit, mouseX, mouseY, 100, 100)
+      image(fruit[fruit0], mouseX, mouseY, 0, 0);
       }
     }
+  }
+
+  function mouseReleased() {
+    fruit0++;
+    fruit0 = fruit.length;
   }
