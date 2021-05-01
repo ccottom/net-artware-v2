@@ -1,12 +1,13 @@
-/* global image */
+/* global image, mouseReleased */
 window.brushes.fruitStamp = {
   name: 'fruit stamp',
   draw: function () {
-      image(fruit[fruit0], window.input.x, window.input.y, 0, 0);
+    background (0);
+    image(fruit[fruit0], window.input.x, window.input.y, 50, 50);
       }
-    }
+}
 
   function mouseReleased() {
     fruit0++;
-    fruit0 = fruit.length;
+    fruit0 %= fruit.length;
   }
