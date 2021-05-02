@@ -5,7 +5,7 @@ let idx = 0;
 function preload () {
   window.setupMenuLogic()
   for (let i = 0; i < 5; i++) {
-    fruit[i] = loadImage("../images/fruit/fruit" + i + ".png");
+    fruit[i] = loadImage("./images/fruit/fruit" + i + ".png");
   }
 }
 
