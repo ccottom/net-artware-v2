@@ -2,7 +2,6 @@
 window.brushes.fruitStamp = {
   name: 'fruit stamp',
   draw: function () {
-    background (0);
     image(fruit[fruit0], window.input.x, window.input.y, 50, 50);
       }
 }
